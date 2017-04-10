@@ -1,0 +1,10 @@
+name: CorpseRebornApITest
+main: org.golde.bukkit.corpserebornapitest.MyPlugin
+version: 1.0
+author: Eric Golde
+description:
+website: http://eric.golde.org/
+commands:
+   test:
+      description: Test api
+      usage: /test 
