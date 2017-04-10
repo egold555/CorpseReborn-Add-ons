@@ -1,8 +1,8 @@
-name: CorpseRebornApITest
+name: CorpseRebornAPITest
 main: org.golde.bukkit.corpserebornapitest.MyPlugin
 version: 1.0
 author: Eric Golde
-description:
+description: Makeing sure I did not break the API for CorpseReborn
 website: http://eric.golde.org/
 commands:
    test:

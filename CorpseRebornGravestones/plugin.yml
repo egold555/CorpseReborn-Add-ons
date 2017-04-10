@@ -2,6 +2,6 @@ name: CorpseRebornGravestones
 main: org.golde.bukkit.corpsereborngravestones.Main
 version: 1.0
 author: Eric Golde
-description:
+description: An unfinished plugin that adds gravestones to your world.
 website: http://eric.golde.org/
-depend: ["CorpseReborn"]
+depends: ["CorpseReborn", "WorldEdit"]
