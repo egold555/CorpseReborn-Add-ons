@@ -1,4 +1,4 @@
-name: CorpseRebornAPITest
+name: CRAPITest
 main: org.golde.bukkit.corpserebornapitest.MyPlugin
 version: 1.0
 author: Eric Golde
