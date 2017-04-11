@@ -1,0 +1,7 @@
+name: NoItemsNoCorpse
+main: org.golde.bukkit.corpserebornaddons.noitemsnocorpse.Main
+version: 1.0
+author: Eric Golde
+description: CorpseReborn addon. Cancles creation of corpse if player has no items.
+website: http://eric.golde.org/
+depend: [CorpseReborn]
