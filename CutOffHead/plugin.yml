@@ -1,0 +1,6 @@
+name: CRCutOffHead
+main: org.golde.bukkit.craddons.nohead.Main
+version: 1.0
+author: Eric Golde
+description: Addon for CorpseReborn. We must cut off everyones head!
+website: http://eric.golde.org/
