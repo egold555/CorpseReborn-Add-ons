@@ -20,7 +20,9 @@ public class Main extends JavaPlugin implements Listener{
 
 	@EventHandler
 	public void onCorpseClick(CorpseClickEvent e) {
-		if(e.getClicker().hasPermission("ooccc.admin"));
+		if(e.getClicker().hasPermission("ooccc.admin")) {
+			return;
+		}
 		if(!e.getClicker().getName().equalsIgnoreCase(e.getCorpse().getPlayer().getName())) {
 			e.setCancelled(true);
 			e.getClicker().sendMessage(ChatColor.RED + "Only owners of the corpse can loot this corpse.");

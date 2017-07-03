@@ -14,7 +14,6 @@ import org.bukkit.plugin.java.JavaPlugin;
 import org.golde.bukkit.corpsereborn.CorpseAPI.*;
 import org.golde.bukkit.corpsereborn.CorpseAPI.events.*;
 import org.golde.bukkit.corpsereborn.nms.Corpses.CorpseData;
-
 public class MyPlugin extends JavaPlugin implements Listener{
 
 	public void onEnable() {
@@ -66,17 +65,13 @@ public class MyPlugin extends JavaPlugin implements Listener{
 	}
 
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
+		
 		Player p = (Player)sender;
-		CorpseAPI.spawnCorpse(p, 
-				"TestCorpse", 
-				p.getLocation(), 
-				null, 
-				new ItemStack(Material.EMERALD_BLOCK), 
-				null, 
-				null, 
-				null, 
-				null, 
-				null);
+		
+		CorpseData cd = CorpseAPI.spawnCorpse(p, "TestCorpse", p.getLocation(), null, null, null, null, null, null, null, CorpseAPI.ROTATION_EAST);
+		cd.setCanSee(Bukkit.getPlayer("Notch"), false);
+		
+		
 		return true;
 	}
 	
