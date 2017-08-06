@@ -1,7 +1,6 @@
 package org.golde.bukkit.corpserebornaddons.onlyownerscanopencorpses;
 
 import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -9,9 +8,14 @@ import org.golde.bukkit.corpsereborn.CorpseAPI.events.CorpseClickEvent;
 
 public class Main extends JavaPlugin implements Listener{
 
+	private String errorMessage = "";
+	
 	public void onEnable() {
         Bukkit.getPluginManager().registerEvents(this, this);
+        saveDefaultConfig();
 		getLogger().info("OnlyOwnersCanClickCorpses is starting.");
+		errorMessage = getConfig().getString("error-message");
+		errorMessage = errorMessage.replace("&", "§");
 	}
 
 	public void onDisable() {
@@ -25,7 +29,7 @@ public class Main extends JavaPlugin implements Listener{
 		}
 		if(!e.getClicker().getName().equalsIgnoreCase(e.getCorpse().getPlayer().getName())) {
 			e.setCancelled(true);
-			e.getClicker().sendMessage(ChatColor.RED + "Only owners of the corpse can loot this corpse.");
+			e.getClicker().sendMessage(errorMessage);
 		}
 	}
 
