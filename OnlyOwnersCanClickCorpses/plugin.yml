@@ -1,6 +1,6 @@
 name: OnlyOwnersCanClickCorpses
 main: org.golde.bukkit.corpserebornaddons.onlyownerscanopencorpses.Main
-version: 1.2
+version: 1.3
 author: Eric Golde
 description: A custom made addon for CorpseReborn that makes only owners of the corpse able to loot it.
 website: http://eric.golde.org/

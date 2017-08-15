@@ -27,7 +27,7 @@ public class Main extends JavaPlugin implements Listener{
 		if(e.getClicker().hasPermission("ooccc.admin")) {
 			return;
 		}
-		if(!e.getClicker().getName().equalsIgnoreCase(e.getCorpse().getPlayer().getName())) {
+		if(!e.getClicker().getName().equalsIgnoreCase(e.getCorpse().getCorpseName())) {
 			e.setCancelled(true);
 			e.getClicker().sendMessage(errorMessage);
 		}

@@ -21,7 +21,7 @@ public class Main extends JavaPlugin implements Listener{
 
 	@EventHandler
 	public void onCorpseSpawn(CorpseSpawnEvent e) {
-		if(isPlayerInventoryEmpty(e.getCorpse().getPlayer())) {
+		if(isPlayerInventoryEmpty(Bukkit.getPlayer(e.getCorpse().getCorpseName()))) {
 			e.setCancelled(true);
 		}
 	}
