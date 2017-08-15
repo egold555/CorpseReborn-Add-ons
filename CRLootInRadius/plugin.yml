@@ -1,0 +1,7 @@
+name: LootCorpseInRadius
+main: org.golde.bukkit.corpserebornaddons.lootcorpseinradius.Main
+version: 1.0
+author: Eric Golde
+description: A custom made addon for CorpseReborn that puts a message in your actionbar telling you that a corpse is near by and you can click to loot it
+website: http://eric.golde.org/
+depend: [CorpseReborn]
