@@ -1,3 +1,3 @@
-message: '&eClick to loot %corpse%'s corpse'
+message: '&eClick to loot %corpse%s corpse'
 radius: 10
 allow-looting: true
