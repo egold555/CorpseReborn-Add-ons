@@ -36,7 +36,7 @@ public class Main extends JavaPlugin implements Listener{
 		actionMessage = config.getString("message", "Config message not found.");
 		actionMessage = actionMessage.replace("&", "§");
 		radius = config.getInt("radius", 10);
-		allowLootingInRadius = config.getBoolean("allow-looting", false);
+		allowLootingInRadius = config.getBoolean("allow-looting", true);
 	}
 
 	public void onDisable() {
@@ -45,6 +45,8 @@ public class Main extends JavaPlugin implements Listener{
 
 	@EventHandler
 	public void move(PlayerMoveEvent e) {
+		if(!e.getPlayer().hasPermission("craddons.lootinradius")) {return;}
+		
 		//BAD way of doing this using PlayerMoveEvent
 		List<CorpseData> list = CorpseAPI.getCorpseInRadius(e.getPlayer().getLocation(), radius);
 		if(list.size() == 0) {return;}
@@ -59,14 +61,18 @@ public class Main extends JavaPlugin implements Listener{
 	@EventHandler(priority=EventPriority.LOWEST)
 	public void rickClick(PlayerInteractEvent e) {
 		if(!allowLootingInRadius) {return;}
+		if(!e.getPlayer().hasPermission("craddons.lootinradius")) {return;}
 		if(e.getAction() == Action.PHYSICAL) {return;}
+		
 		try {
 			//Handle clicking of corpse
 			Player player = e.getPlayer();
 			CorpseData cd = mapFromPlayerToClickableCorpse.getOrDefault(player, null);
 			if(cd == null) {return;}
+			
 			InventoryView view = player.openInventory(cd.getLootInventory());
 			cd.setInventoryView(view);
+			cd = null; //TODO
 
 			//Call corpse click event (For other plugins that use it)
 			Bukkit.getServer().getPluginManager().callEvent(new CorpseClickEvent(cd, player, TypeOfClick.BOTH));
