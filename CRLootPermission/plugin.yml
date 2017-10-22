@@ -1,0 +1,7 @@
+name: CRLootPermission
+main: org.golde.bukkit.corpserebornaddons.lootpermission.Main
+version: 1.1
+author: Eric Golde
+description: CorpseReborn addon. Makes it so you need a permission to loot corpses.
+website: http://eric.golde.org/
+depend: [CorpseReborn]
