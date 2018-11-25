@@ -1,0 +1,7 @@
+name: NoLavaCorpse
+main: org.golde.bukkit.corpserebornaddons.nolavacorpse.Main
+version: 1.1
+author: Eric Golde
+description: CorpseReborn addon. Cancels creation of corpse if player died in lava. Made by the request of Ben.
+website: http://eric.golde.org/
+depend: [CorpseReborn]
